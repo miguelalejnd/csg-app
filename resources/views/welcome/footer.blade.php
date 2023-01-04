@@ -10,7 +10,7 @@
             
             <a 
                 aria-label="Chat on WhatsApp"
-                class="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-sm font-semibold transition"
+                class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-sm font-semibold transition"
                 href="https://wa.me/50370171649"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -87,7 +87,7 @@
                 <ul class="flex flex-wrap gap-6">
                     <li>
                         <x-link :href="route('welcome.index')">
-                            {{ __('Bienvenida') }}
+                            {{ __('Inicio') }}
                         </x-link>
                     </li>
                     @guest
