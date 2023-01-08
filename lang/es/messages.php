@@ -23,6 +23,8 @@ return [
     'users' => 'Usuarios',
     'accounting' => 'Contabilidad',
     'inventary' => 'Inventario',
+    'internal_site' => 'Gestionar la organización',
+    'external_site' => 'Sitio corporativo externo',
     
     // login page.
     'name' => 'Nombre',

@@ -53,9 +53,16 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('welcome.index')">
+                            {{ __('messages.external_site') }}
+                        </x-dropdown-link>
+
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('messages.profile') }}
                         </x-dropdown-link>
+
+                        <div class="h-0 my-1 border border-t-0 border-gray-100 dark:border-gray-600"></div>
+
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -114,6 +121,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('welcome.index')">
+                    {{ __('messages.external_site') }}
+                </x-responsive-nav-link>
+
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('messages.profile') }}
                 </x-responsive-nav-link>
