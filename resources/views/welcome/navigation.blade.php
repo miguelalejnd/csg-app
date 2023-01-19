@@ -10,31 +10,31 @@
 
                 <!-- Navigation Links -->
                 
-                <!-- Dashboard -->
+                <!-- home -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('profile.edit')" :active="request()->is('/')">
                         {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
-                
-                <!-- Users -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('profile.edit')" :active="false">
-                        {{ __('Conozcanos') }}
-                    </x-nav-link>
-                </div>
-                
-                <!-- Accounting -->
+
+                <!-- promotions -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('profile.edit')" :active="false">
                         {{ __('Promociones') }}
                     </x-nav-link>
                 </div>
-                
-                <!-- Inventary -->
+
+                <!-- contact -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('profile.edit')" :active="false">
                         {{ __('Contacto') }}
+                    </x-nav-link>
+                </div>
+                
+                <!-- about us -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('profile.edit')" :active="false">
+                        {{ __('Conozcanos') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -95,17 +95,17 @@
         </div>
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('profile.edit')" :active="false">
-                {{ __('Conozcanos') }}
-            </x-responsive-nav-link>
-        </div>
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('profile.edit')" :active="false">
                 {{ __('Promociones') }}
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('profile.edit')" :active="false">
                 {{ __('Contacto') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('profile.edit')" :active="false">
+                {{ __('Conozcanos') }}
             </x-responsive-nav-link>
         </div>
 
