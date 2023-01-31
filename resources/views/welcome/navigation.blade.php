@@ -64,7 +64,7 @@
                             {{ __('messages.profile') }}
                         </x-dropdown-link>
 
-                        <div class="h-0 my-1 border border-t-0 border-gray-100 dark:border-gray-600"></div>
+                        <div class="h-0 my-1 border border-t-0 border-gray-200 dark:border-gray-600"></div>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
