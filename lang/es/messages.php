@@ -39,4 +39,24 @@ return [
     // reset password
     'confirm_password' => 'Confirmar contraseña',
     'reset_password' => 'Restablecer contraseña',
+
+    // public site
+    'comporation_name' => 'Centro de servicio Garage',
+    'comporation_description' => 'Taller automotriz y repuestos',
+    'areas_title' => [
+        'red_text' => 'Soluciones',
+        'normal_text' => ' para tus necesidades en'
+    ],
+    'cars' => 'Automóviles',
+    'motorcycles' => 'Motocicletas',
+    'parts' => 'Adquisición de repuestos',
+    'services_title' => [
+        'red_text' => 'Servicios',
+        'normal_text' => ' que proveemos'
+    ],
+    'services_subtitle' => 'Disponibles para carros y motocicletas',
+    'general_mechanics' => 'Mecánica general',
+    'diagnosis' => 'Diagnóstico de motor con escáner',
+    'electric' => 'Sistema eléctrico',
+    'oils' => 'Lubricantes, aceites y filtros',
 ];
