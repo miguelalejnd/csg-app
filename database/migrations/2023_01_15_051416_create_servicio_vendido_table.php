@@ -13,23 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ItemVendidoServicio', function (Blueprint $table) {
+        Schema::create('ServicioVendido', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('ventaId');
+            $table->unsignedBigInteger('transaccionId');
             $table->unsignedBigInteger('servicioId');
-            $table->unsignedBigInteger('vehiculoId');
+            $table->unsignedBigInteger('matriculaVehiculo');
             $table->decimal('descuento', $precision = 2, $scale = 2);
             $table->decimal('subtotal', $precision = 8, $scale = 2);
             
-            $table->foreign('ventaId')
+            $table->foreign('transaccionId')
                 ->references('id')
-                ->on('Venta')
+                ->on('Transaccion')
                 ->onDelete('cascade');
             $table->foreign('servicioId')
                 ->references('id')
                 ->on('Servicio');
-            $table->foreign('vehiculoId')
-                ->references('id')
+            $table->foreign('matriculaVehiculo')
+                ->references('matricula')
                 ->on('Vehiculo')
                 ->nullable();
         });
@@ -42,6 +42,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ItemVendidoServicio');
+        Schema::dropIfExists('ServicioVendido');
     }
 };

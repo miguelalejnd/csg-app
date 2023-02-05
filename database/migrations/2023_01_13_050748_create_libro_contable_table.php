@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('LibroAuxiliar', function (Blueprint $table) {
+        Schema::create('LibroContable', function (Blueprint $table) {
             $table->id();
             $table->string('cuentaCodigo', 8);
             $table->unsignedBigInteger('periodoId');
+            $table->char('tipo', 1);
             $table->string('descripcion', 60);
             
             $table->foreign('cuentaCodigo')
@@ -38,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('LibroAuxiliar');
+        Schema::dropIfExists('LibroContable');
     }
 };

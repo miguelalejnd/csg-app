@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Asiento', function (Blueprint $table) {
+        Schema::create('FechaAsientos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('fechaAsientosId');
-            $table->string('glosa', 100);
-            
-            $table->foreign('fechaAsientosId')
+            $table->unsignedBigInteger('libroDiarioId');
+            $table->date('fecha')->useCurrent();
+
+            $table->foreign('libroDiarioId')
                 ->references('id')
-                ->on('FechaAsientos');
+                ->on('LibroDiario');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Asiento');
+        Schema::dropIfExists('FechaAsientos');
     }
 };

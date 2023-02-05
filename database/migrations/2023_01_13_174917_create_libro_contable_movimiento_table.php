@@ -13,22 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('LibroAuxiliarMovimiento', function (Blueprint $table) {
+        Schema::create('LibroContableMovimiento', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('libroAuxiliarId');
-            $table->unsignedBigInteger('asientoId');
+            $table->unsignedBigInteger('libroContableId');
+            $table->unsignedBigInteger('libroDiarioMovimientoId');
             $table->date('fecha');
             $table->char('tipoMovimeinto', 1);
             $table->decimal('monto', $precision = 8, $scale = 2);
             $table->decimal('saldo', $precision = 8, $scale = 2);
             
-            $table->foreign('libroAuxiliarId')
+            $table->foreign('libroContableId')
                 ->references('id')
-                ->on('LibroAuxiliar')
+                ->on('LibroContable')
                 ->onDelete('cascade');
-            $table->foreign('asientoId')
+            $table->foreign('libroDiarioMovimientoId')
                 ->references('id')
-                ->on('Asiento')
+                ->on('LibroDiarioMovimiento')
                 ->onDelete('cascade');
         });
     }
@@ -40,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('LibroAuxiliarMovimiento');
+        Schema::dropIfExists('LibroContableMovimiento');
     }
 };

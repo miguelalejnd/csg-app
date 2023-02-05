@@ -14,10 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Cliente', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre', 60);
+            $table->unsignedBigInteger('modeloId')->primary();
             $table->char('dui', 9)->nullable();
-            $table->string('telefono', 8)->nullable();
+
+            $table->foreign('modeloId')
+                ->references('id')
+                ->on('Modelo')
+                ->onDelete('cascade');
 
             // who columns `CREATED_AT`, `CREATED_USER`, `LAST_UPDATED_AT`, `LAST_UPDATED_USER`
             $table->timestamp('createdAt')->useCurrent();

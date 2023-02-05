@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Compra', function (Blueprint $table) {
+        Schema::create('Transaccion', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('asientoId');
-            $table->unsignedBigInteger('usuarioId');
-            $table->unsignedBigInteger('proveedorId');
-            $table->timestamp('fecha');
+            $table->unsignedBigInteger('userId');
+            $table->unsignedBigInteger('modeloId');
+            $table->char('tipo', 1);
+            $table->date('fecha')->useCurrent();
             $table->decimal('total', $precision = 8, $scale = 2);
 
             // who columns `CREATED_AT`, `CREATED_USER`, `LAST_UPDATED_AT`, `LAST_UPDATED_USER`
@@ -31,10 +32,10 @@ return new class extends Migration
                 ->references('id')
                 ->on('Asiento')
                 ->nullable();
-            $table->foreign('usuarioId')
+            $table->foreign('userId')
                 ->references('id')
                 ->on('User');
-            $table->foreign('proveedorId')
+            $table->foreign('modeloId')
                 ->references('id')
                 ->on('Proveedor');
         });
@@ -47,6 +48,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Compra');
+        Schema::dropIfExists('Transaccion');
     }
 };
