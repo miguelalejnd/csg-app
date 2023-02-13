@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,10 +46,8 @@ Route::middleware('auth')->group(function () {
 });
 
 // users
-Route::middleware('auth')->group(function () {
-    Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('user.index');
-    Route::get('/users/create', [UserController::class, 'create'])->middleware('auth')->name('user.create');
-    
-});
+Route::resource('usuarios', UserController::class);
+
+Route::put('usuarios/{id}/password', [UserPasswordController::class, 'update'])->name('usuarios.password');
 
 require __DIR__.'/auth.php';
