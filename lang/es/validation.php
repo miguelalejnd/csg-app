@@ -31,6 +31,7 @@ return [
     ],
     'boolean'              => 'El campo :attribute debe ser verdadero o falso.',
     'confirmed'            => 'El campo confirmación de :attribute no coincide.',
+    'current_password'     => 'la contraseña es incorrecta.',
     'date'                 => 'El campo :attribute no corresponde con una fecha válida.',
     'date_equals'          => 'El campo :attribute debe ser una fecha igual a :date.',
     'date_format'          => 'El campo :attribute no corresponde con el formato de fecha :format.',
@@ -146,6 +147,11 @@ return [
     |
     */
 
-    'attributes' => ['filed' => 'translation',],
+    'attributes' => [
+        'email' => 'correo electrónico',
+        'name' => 'nombre',
+        'password' => 'contraseña',
+        'password_confirmation' => 'confirmar contraseña',
+    ],
 
 ];
