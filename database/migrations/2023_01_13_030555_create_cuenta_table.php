@@ -14,14 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Cuenta', function (Blueprint $table) {
-            $table->string('codigo', 8);
+            $table->string('codigo', 8)->primary();
             $table->unsignedBigInteger('catalogoCuentasId');
             $table->string('supercuentaCodigo', 8);
             $table->string('nombre', 60);
             $table->char('tipo', 1);
             $table->char('naturaleza', 1);
 
-            $table->unique('codigo');
             $table->foreign('catalogoCuentasId')
                 ->references('id')
                 ->on('CatalogoCuentas');

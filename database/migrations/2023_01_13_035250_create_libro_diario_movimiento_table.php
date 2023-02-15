@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('LibroDiarioMovimiento', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('asientoId');
-            $table->unsignedBigInteger('cuentaCodigo');
+            $table->char('cuentaCodigo', 8);
             $table->char('tipoMovimiento', 1);
             $table->decimal('monto', $precision = 8, $scale = 2);
             
