@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Cuenta', function (Blueprint $table) {
-            $table->string('codigo', 8)->primary();
+            $table->string('codigo', 8)
+                ->unique()
+                ->primary();
             $table->unsignedBigInteger('catalogoCuentasId');
             $table->string('supercuentaCodigo', 8);
             $table->string('nombre', 60);
