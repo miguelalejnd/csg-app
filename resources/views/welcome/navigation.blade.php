@@ -57,7 +57,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('dashboard')">
-                            {{ __('messages.internal_site') }}
+                            {{ __('messages.private_site') }}
                         </x-dropdown-link>
 
                         <x-dropdown-link :href="route('profile.edit')">
@@ -125,7 +125,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('dashboard')">
-                            {{ __('messages.internal_site') }}
+                            {{ __('messages.private_site') }}
                 </x-responsive-nav-link>
 
                 <x-responsive-nav-link :href="route('profile.edit')">
