@@ -1,17 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-gray-800 dark:text-gray-200 leading-tight">
             <a href="{{ route('usuarios.index') }}">{{ __('messages.users') }}</a>
-
             <svg 
-                class="inline overflow-visible mx-1.5 fill-none stroke-current stroke-2 w-auto h-1.5"
+                class="inline text-gray-300 dark:text-gray-600 overflow-visible mx-1.5 fill-none stroke-current stroke-2 w-auto h-1.5"
                 viewBox="0 0 3 6"
                 stroke-linejoin="round"
                 stroke-linecap="round"
             >
                 <path d="M0 0L3 3L0 6" />
             </svg>
-            Editar usuario
+            <span class="text-gray-500 dark:text-gray-400">Editar</span>
         </h2>
     </x-slot>
 
