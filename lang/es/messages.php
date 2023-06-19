@@ -45,7 +45,7 @@ return [
     'comporation_description' => 'Taller automotriz y repuestos',
     'areas_title' => [
         'red_text' => 'Soluciones',
-        'normal_text' => ' para tus necesidades en'
+        'normal_text' => ' para tus necesidades con'
     ],
     'cars' => 'Automóviles',
     'motorcycles' => 'Motocicletas',
@@ -56,7 +56,7 @@ return [
     ],
     'services_subtitle' => 'Disponibles para carros y motocicletas',
     'general_mechanics' => 'Mecánica general',
-    'diagnosis' => 'Diagnóstico de motor con escáner',
+    'diagnosis' => 'Diagnóstico con escáner automotriz',
     'electric' => 'Sistema eléctrico',
     'oils' => 'Lubricantes, aceites y filtros',
 ];
