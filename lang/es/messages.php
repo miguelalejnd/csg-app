@@ -21,7 +21,9 @@ return [
     // navigation component.
     'dashboard' => 'Tablero de control',
     'users' => 'Usuarios',
-    'accounting' => 'Contabilidad',
+    'sales' => 'Ventas',
+    'purchases' => 'Compras',
+    'visites' => 'Visitas',
     'inventary' => 'Inventario',
     'private_site' => 'Sitio privado',
     'public_site' => 'Sitio público',

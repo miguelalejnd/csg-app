@@ -24,11 +24,29 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// accounting
+// users
+Route::resource('usuarios', UserController::class);
+Route::put('usuarios/{id}/password', [UserPasswordController::class, 'update'])->name('users.password');
+
+// sales
 Route::middleware('auth', 'verified')->group(function () {
-    Route::get('/contabilidad', function () {
-        return view('accounting.index');
-    })->name('accounting.index');
+    Route::get('/ventas', function () {
+        return view('sales.index');
+    })->name('sales.index');
+});
+
+// purchases
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/compras', function () {
+        return view('purchases.index');
+    })->name('purchases.index');
+});
+
+// visites
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/visitas', function () {
+        return view('visites.index');
+    })->name('visites.index');
 });
 
 // inventary
@@ -44,10 +62,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-// users
-Route::resource('usuarios', UserController::class);
-
-Route::put('usuarios/{id}/password', [UserPasswordController::class, 'update'])->name('usuarios.password');
 
 require __DIR__.'/auth.php';
