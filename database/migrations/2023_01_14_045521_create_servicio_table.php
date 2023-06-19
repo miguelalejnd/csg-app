@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Servicio', function (Blueprint $table) {
-            $table->id();
-            $table->string('descripcion', 60);
+        Schema::create('servicio', function (Blueprint $table) {
+            $table->id('servicio_id');
+            $table->string('descripcion', 100);
             $table->decimal('precio', $precision = 8, $scale = 2);
-
-            // who columns `CREATED_AT`, `CREATED_USER`, `LAST_UPDATED_AT`, `LAST_UPDATED_USER`
-            $table->timestamp('createdAt')->useCurrent();
-            $table->bigInteger('createdUser');
-            $table->timestamp('lastUpdatedAt')->useCurrentOnUpdate();
-            $table->bigInteger('lastUpdatedUser');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Servicio');
+        Schema::dropIfExists('servicio');
     }
 };

@@ -13,22 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Vehiculo', function (Blueprint $table) {
-            $table->string('matricula', 9)->primary();
-            $table->unsignedBigInteger('clienteId');
-            $table->string('marca', 30);
-            $table->string('modelo', 30);
-            $table->integer('anio');
-
-            // who columns `CREATED_AT`, `CREATED_USER`, `LAST_UPDATED_AT`, `LAST_UPDATED_USER`
-            $table->timestamp('createdAt')->useCurrent();
-            $table->bigInteger('createdUser');
-            $table->timestamp('lastUpdatedAt')->useCurrentOnUpdate();
-            $table->bigInteger('lastUpdatedUser');
+        Schema::create('vehiculo', function (Blueprint $table) {
+            $table->id('vehiculo_id');
+            $table->unsignedBigInteger('persona_id');         
+            $table->string('matricula', 6);
+            $table->string('marca', 50);
+            $table->string('modelo', 50);
+            $table->integer('model_year');
+            $table->timestamps();
             
-            $table->foreign('clienteId')
-                ->references('id')
-                ->on('Cliente');
+            $table->foreign('persona_id')
+                ->references('persona_id')
+                ->on('cliente')
+                ->onDelete('cascade');
         });
     }
 
@@ -39,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Vehiculo');
+        Schema::dropIfExists('vehiculo');
     }
 };

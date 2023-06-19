@@ -13,31 +13,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Transaccion', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('asientoId');
-            $table->unsignedBigInteger('userId');
-            $table->unsignedBigInteger('modeloId');
-            $table->char('tipo', 1);
-            $table->date('fecha')->useCurrent();
+        Schema::create('transaccion', function (Blueprint $table) {
+            $table->id('transaccion_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('persona_id');
+            $table->integer('tipo'); // 1: venta, 2: compra.
+            $table->integer('estado'); // 1: pendiente, 2: cancelado.
             $table->decimal('total', $precision = 8, $scale = 2);
-
-            // who columns `CREATED_AT`, `CREATED_USER`, `LAST_UPDATED_AT`, `LAST_UPDATED_USER`
-            $table->timestamp('createdAt')->useCurrent();
-            $table->bigInteger('createdUser');
-            $table->timestamp('lastUpdatedAt')->useCurrentOnUpdate();
-            $table->bigInteger('lastUpdatedUser');
+            $table->timestamps();
             
-            $table->foreign('asientoId')
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('Asiento')
-                ->nullable();
-            $table->foreign('userId')
-                ->references('id')
-                ->on('User');
-            $table->foreign('modeloId')
-                ->references('id')
-                ->on('Proveedor');
+                ->on('users')
+                ->onDelete('cascade');
+            
+            $table->foreign('persona_id')
+                ->references('persona_id')
+                ->on('persona')
+                ->onDelete('cascade');
         });
     }
 
@@ -48,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Transaccion');
+        Schema::dropIfExists('transaccion');
     }
 };

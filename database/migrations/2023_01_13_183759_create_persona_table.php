@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('articulo', function (Blueprint $table) {
-            $table->id('articulo_id');
+        /**
+         * Esta tabla almacena una persona natural o jurídica.
+         */
+        Schema::create('persona', function (Blueprint $table) {
+            $table->id('persona_id');
+            $table->integer('tipo'); // 1: natural, 2: jurídica.
             $table->string('nombre', 100);
-            $table->string('marca', 50);
-            $table->decimal('precio', $precision = 8, $scale = 2);
+            $table->string('telefono', 15)->nullable();
+            $table->string('direccion', 100)->nullable();;
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articulo');
+        Schema::dropIfExists('persona');
     }
 };
