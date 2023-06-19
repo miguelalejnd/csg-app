@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nombre', 60);
             $table->char('tipo', 1);
             $table->char('naturaleza', 1);
-            
+
             $table->foreign('catalogoCuentasId')
                 ->references('id')
                 ->on('CatalogoCuentas');

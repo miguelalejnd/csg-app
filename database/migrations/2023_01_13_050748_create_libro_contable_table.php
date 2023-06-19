@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('LibroContable', function (Blueprint $table) {
             $table->id();
-            $table->string('cuentaCodigo', 8);
+            $table->char('cuentaCodigo', 8);
             $table->unsignedBigInteger('periodoId');
             $table->char('tipo', 1);
             $table->string('descripcion', 60);
