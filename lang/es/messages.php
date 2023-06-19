@@ -23,8 +23,8 @@ return [
     'users' => 'Usuarios',
     'accounting' => 'Contabilidad',
     'inventary' => 'Inventario',
-    'internal_site' => 'Sitio web privado',
-    'external_site' => 'Sitio web público',
+    'private_site' => 'Sitio privado',
+    'public_site' => 'Sitio público',
     
     // login page.
     'name' => 'Nombre',
