@@ -16,8 +16,8 @@
             <div class="overflow-x-auto rounded-lg border border-gray-300 dark:border-gray-700">
                 <table class="table-fixed min-w-full text-sm text-left text-gray-900 dark:text-gray-100">
                     <thead>
-                        <tr>
-                            <th scope="col" class="px-6 py-3 bg-white dark:bg-gray-800">
+                        <tr class="bg-white dark:bg-gray-800">
+                            <th scope="col" class="px-6 py-3">
                                 Nombre
                             </th>
                             
@@ -25,7 +25,7 @@
                                 Correo electrónico
                             </th>
 
-                            <th scope="col" class="px-6 py-3 bg-white dark:bg-gray-800">
+                            <th scope="col" class="px-6 py-3">
                                 Acciones
                             </th>
                         </tr>
@@ -33,14 +33,14 @@
                     
                     <tbody>
                         @foreach($users as $user)
-                            <tr class="border-t border-gray-300 dark:border-gray-700">
-                                <td class="px-6 py-4 bg-white dark:bg-gray-800">
+                            <tr class="border-t border-gray-300 dark:border-gray-700 even:bg-white dark:even:bg-gray-800">
+                                <td class="px-6 py-4">
                                     {{ $user->name }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $user->email }}
                                 </td>
-                                <td class="px-6 py-4 bg-white dark:bg-gray-800">
+                                <td class="px-6 py-4">
                                     <a 
                                         href="{{ route('usuarios.show', $user->id) }}"
                                         class="text-blue-500 dark:text-blue-400 hover:underline mr-4"
